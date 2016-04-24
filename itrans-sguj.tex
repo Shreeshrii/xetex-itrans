@@ -1,0 +1,60 @@
+\documentclass[12pt]{article}
+\usepackage{ifxetex}
+\RequireXeTeX
+\usepackage{fontspec}
+%xetex-itrans - to convert ITRANS to unicode devanagari
+\newcommand\isan{
+	\catcode`\^=11
+           \catcode`\~=11
+           \fontspec[Script=Devanagari,Mapping=itrans-sdvn]{Sanskrit 2003}} 
+\newcommand\gu{\catcode`\^=11
+            \catcode`\~=11
+           \fontspec[Script=Gujarati,Mapping=itrans-sguj]{Shruti}
+           }
+\obeylines
+ 
+\begin{document}
+
+{\gu
+1 2 3 4 5 6 7 8 9 10 100 1000
+
+ka kaa kA ki kii kI ku kuu kU ka.c ke kai kA.c ko kau kaM kaH ka.N 
+\bigskip
+a     aa / A       i      ii / I       u     uu / U 
+RRi / R^i    RRI / R^I    LLi / L^i    LLI / L^I
+a.c     e      ai     aa.c / A.c   o     au     aM / a.n   a.N   aH
+\bigskip
+k     kh     g     gh     ~N / N^
+ch    Ch     j     jh     ~n / JN
+T     Th     D     Dh     N
+t     th     d     dh     n
+p     ph     b     bh     m
+y     r      l     v / w
+sh    Sh     s     h      L / ld
+x / kSh     GY / j~n / dny     shr
+ka     kha     ga     gha     ~Na / N^a
+cha    Cha     ja     jha     ~na / JNa
+Ta     Tha     Da     Dha     Na
+ta     tha     da     dha     na
+pa     pha     ba     bha     ma
+ya     ra      la     va / wa
+sha    Sha     sa     ha      La / lda
+xa / kSha  tra   GYa / j~na / dnya     shra
+qa Ka Ga fa Ja za 
+\bigskip
+ka kaa ki kii ku kuu qa - sa saa si sii su suu
+khRRi khe khai khaM khaH kha.c kha.N - De Dai DaM DaH Da.c Da.N
+lda gRRi gR^i rga a.c aa.c a.ckTa aa.cfis fa.ckTa kaa.cla kol fA.cla Da.N 
+raamam raamaM raama.n raama.N raama.c raamam.h raamau raamaaH
+\bigskip
+OM shrii gaNeshaaya namaH 
+\bigskip
+charitaM raghunAthasya shatakoTi pravistaram .
+ekaikamakSharaM pu.nsAM mahApAtakanAshanam .. 1..
+dhyAtvA nIlotpalashyAmaM rAmaM rAjIvalochanam .
+jAnakIlakShmaNopetaM jaTAmukuTama.nDitam .. 2..
+sAsitUNadhanurbANapANiM nakta.ncharAntakam .
+svalIlayA jagatrAtuM AvirbhUtaM ajaM vibhum .. 3..
+}
+
+\end{document}

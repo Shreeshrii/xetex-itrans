@@ -1,0 +1,349 @@
+; TECkit mapping for transliterating sanskrit in ITRANS input scheme to 
+; Unicode Gujarati U+0A80–U+0AFF by Shreedevi Kumar,
+; Updated 2015-01-02
+; based on itrans-sdvn.map by Abhinandan S.P. <abhinandan.sp@iiitb.net> and Shrisha Rao <shrao@acm.org>,
+; DOES NOT have support for ga^r Rga - use rga and gRRI instead
+
+LHSName "itrans-sguj"
+RHSName "Unicode"
+LHSDescription "ITRANS input method for Unicode Gujarati"
+Version "1.00"
+
+Define dot U+002E
+
+Define a U+0061
+Define A U+0041
+Define i U+0069
+Define I U+0049
+Define u U+0075
+Define U U+0055
+Define R U+0052
+Define L U+004C
+
+Define e U+0065
+Define o U+006F
+
+Define k U+006B
+Define h U+0068
+Define g U+0067
+Define G U+0047
+
+Define c U+0063
+Define C U+0043  
+Define j U+006A
+Define J U+004A
+
+Define T U+0054
+Define D U+0044
+Define N U+004E
+
+Define t U+0074
+Define d U+0064
+Define n U+006E
+
+Define p U+0070
+Define b U+0062
+Define m U+006D
+
+Define y U+0079
+Define r U+0072
+Define l U+006C
+Define v U+0076
+Define w U+0077
+
+Define z U+007A
+Define S U+0053
+Define s U+0073
+Define Y U+0059
+Define O U+004F
+
+Define tlde    U+007E
+Define cret    U+005E   
+Define H U+0048
+Define M U+004D
+
+Define q U+0071
+Define f U+0066
+Define x U+0078
+Define K U+004B
+
+Define zwj U+200D
+Define zwn U+200C
+
+Define anunasika U+0A81
+Define anusvara	U+0A82
+Define visarga	U+0A83
+
+Define asvara	U+0A85
+Define Asvara	U+0A86
+Define isvara	U+0A87
+Define Isvara	U+0A88
+Define usvara	U+0A89
+Define Usvara	U+0A8A
+Define rvoc	U+0A8B
+Define Rvoc	U+0AE0
+Define lvoc	U+0A8C
+Define Lvoc     U+0AE1
+Define chandraesvara    U+0A8D
+Define esvara	U+0A8F
+Define aisvara	U+0A90
+Define chandraosvara    U+0A91
+Define osvara	U+0A93
+Define ausvara	U+0A94
+
+Define Amatra	U+0ABE
+Define imatra	U+0ABF
+Define Imatra	U+0AC0
+Define umatra	U+0AC1
+Define Umatra	U+0AC2
+Define rmatra	U+0AC3
+Define Rmatra	U+0AC4
+Define lmatra	U+0AE2
+Define chandraematra	U+0AC5
+Define ematra	U+0AC7
+Define aimatra	U+0AC8
+Define chandraomatra	U+0AC9
+Define omatra	U+0ACB
+Define aumatra	U+0ACC
+
+Define ka	U+0A95
+Define kha	U+0A96
+Define ga	U+0A97
+Define gha	U+0A98
+Define Ga	U+0A99
+Define cha	U+0A9A
+Define Cha	U+0A9B
+Define ja	U+0A9C
+Define jha	U+0A9D
+Define Ja	U+0A9E
+Define Ta	U+0A9F
+Define Tha	U+0AA0
+Define Da	U+0AA1
+Define Dha	U+0AA2
+Define Na	U+0AA3
+Define ta	U+0AA4
+Define tha	U+0AA5
+Define da	U+0AA6
+Define dha	U+0AA7
+Define na	U+0AA8
+Define pa	U+0AAA
+Define pha	U+0AAB
+Define ba	U+0AAC
+Define bha	U+0AAD
+Define ma	U+0AAE
+Define ya	U+0AAF
+Define ra	U+0AB0
+Define la	U+0AB2
+Define rla	U+0AB3
+Define va	U+0AB5
+Define wa  U+0AB5
+Define sha	U+0AB6
+Define Sha	U+0AB7
+Define sa	U+0AB8
+Define ha	U+0AB9
+
+Define hka	U+0A95
+Define hkha	U+0A96
+Define hga	U+0A97
+Define hja	U+0A9C
+Define hDa      U+0AA1
+Define hda      U+0AA2
+Define hna      U+0AA8
+Define hpha	U+0AAB
+Define hya      U+0AAF
+Define hra      U+0AB0
+Define hla      U+0AB3
+
+Define vstroke	U+0951
+Define hstroke  U+0952
+
+Define danda	U+0964
+Define ddanda	U+0965
+Define virama	U+0ACD
+Define avagraha	U+0ABD
+
+Define om	U+0AD0
+
+
+pass(Unicode)
+
+a > asvara
+a a > Asvara
+A > Asvara
+i > isvara
+i i > Isvara
+I > Isvara
+u > usvara
+u u > Usvara
+U > Usvara
+R R i > rvoc
+R cret i > rvoc
+R R I > Rvoc
+R cret I > Rvoc
+L L i > lvoc
+L cret i > lvoc
+L L I > Lvoc
+L cret I > Lvoc
+a dot c > chandraesvara
+e > esvara
+a i > aisvara
+a a dot c > chandraosvara
+A dot c > chandraosvara
+o > osvara
+a u > ausvara
+
+k > ka
+k h > kha
+k dot h > ka virama
+k h dot h > kha virama
+g > ga
+g dot h > ga virama
+g h > gha
+g h dot h > gha virama
+tlde N > Ga
+N cret > Ga
+G G > Ga
+tlde N dot h > Ga virama
+N cret dot h > Ga virama
+c h > cha
+c h h > Cha
+c h dot h > cha virama
+C h > Cha
+C h dot h > Cha virama
+c h h dot h > Cha virama
+j > ja 
+j dot h > ja virama
+j h > jha
+j h dot h > jha virama
+tlde n > Ja
+tlde n dot h > Ja virama
+J N > Ja
+T > Ta
+T dot h > Ta virama
+T h > Tha
+T h dot h > Tha virama
+D > Da
+D dot h > Da virama
+D h > Dha
+D h dot h > Dha virama
+N > Na
+N dot h > Na virama
+t > ta
+t dot h > ta virama
+t h > tha
+t h dot h > tha virama
+d > da
+d dot h > da virama
+d h > dha
+d h dot h > dha virama
+n > na
+n dot h > na virama
+p > pa
+p dot h > pa virama
+p h > pha
+p h dot h > pha virama
+b > ba
+b dot h > ba virama
+b h > bha
+b h dot h > bha virama
+m > ma
+m dot h > ma virama
+y > ya
+y dot h > ya virama
+r > ra
+r dot h > ra virama
+l > la
+l dot h > la virama
+v > va
+v dot h > va virama
+w > wa
+w dot h > wa virama
+s h > sha
+s h dot h > sha virama
+s h h > Sha
+s h h dot h > Sha virama
+S h > Sha
+S h dot h > Sha virama
+s > sa
+s dot h > sa virama
+h > ha
+h dot h > ha virama
+x > ka virama Sha
+x dot h > ka virama Sha virama
+k S h > ka virama Sha
+k S h dot h > ka virama Sha virama
+G Y > ja virama Ja
+d n y > ja virama Ja
+A U M > om
+s h r >  sha virama ra
+
+q > hka
+k > hkha
+G > hga
+J > hja
+z > hja
+f > hpha
+
+L > rla
+l d > rla
+
+dot N > anunasika
+M > anusvara
+dot n > anusvara
+H > visarga
+dot a > avagraha
+dot h > virama
+
+U+007C > danda
+U+007C U+007C > ddanda
+
+O M > om
+
+U+0030	> U+0AE6	; Numerals
+U+0031	> U+0AE7
+U+0032	> U+0AE8
+U+0033	> U+0AE9
+U+0034	> U+0AEA
+U+0035	> U+0AEB
+U+0036	> U+0AEC
+U+0037	> U+0AED
+U+0038	> U+0AEE
+U+0039	> U+0AEF
+
+
+
+pass(Unicode)
+
+UniClass [vyanjana] = (ka .. ha hka .. hla)
+UniClass [svara] = (Asvara .. ausvara)
+UniClass [matra] = (Amatra .. aumatra)
+[vyanjana] [svara] > [vyanjana] [matra]
+
+pass(Unicode)
+
+UniClass [vyanjana] = (ka .. ha hka .. hla)
+[vyanjana]=v1 [vyanjana]=v2 > @v1 virama @v2
+
+pass(Unicode)
+
+UniClass [vyanjana] = (ka .. ha hka .. hla)
+[vyanjana]=v1 [vyanjana]=v2 > @v1 virama @v2
+
+;; Fourth pass: making remaining conjuncts (for groups of two or more consonants)
+;; and adding viramas to the end of the words in Sanskrit
+pass (Unicode)
+
+;; Classes
+UniClass [vyanjana] = (ka .. ha hka .. hla)
+UniClass [spacepunct] = (U+0009 .. U+0040 U+005B .. U+0060 U+007B .. U+007D danda ddanda \
+    U+2013 U+2014 U+2018 U+2019 U+201C U+201D)
+
+[vyanjana]=v1 [vyanjana]=v2 <> @v1 virama @v2
+[vyanjana] / _ [spacepunct] <> [vyanjana] virama / _ [spacepunct]
+[vyanjana] / _ # <> [vyanjana] virama / _ #
+
+
+pass(Unicode)
+
+Uniclass [vyanjana] = (ka .. ha hka .. hla)
+[vyanjana] asvara > [vyanjana]
