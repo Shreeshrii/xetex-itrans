@@ -1,0 +1,149 @@
+; $Id: wikner-skt-iast.map,v 1.0 2018-06-01 $
+; TECkit mapping for conversion of Wikner-Skt transliteration
+; into UTF-8 IAST transliteration directly by XeTeX. 
+; Viramas are added after the final consonant.
+LHSName  "Wikner-Skt-iast"
+RHSName  "UNICODE"
+LHSDescription "Wikner-Skt to IAST for Sanskrit"
+Version  "1"
+
+Define a U+0061  ;a
+Define b U+0062  ;b
+Define c U+0063  ;c
+Define d U+0064  ;d
+Define e U+0065  ;e
+Define f U+0066  ;f
+Define g U+0067  ;g
+Define h U+0068  ;h
+Define i U+0069  ;i
+Define j U+006A  ;j
+Define k U+006B  ;k
+Define l U+006C  ;l
+Define m U+006D  ;m
+Define n U+006E  ;n
+Define o U+006F  ;o
+Define p U+0070  ;p
+Define q U+0071  ;q
+Define r U+0072  ;r
+Define s U+0073  ;s
+Define t U+0074  ;t
+Define u U+0075  ;u
+Define v U+0076  ;v
+Define w U+0077  ;w
+Define x U+0078  ;x
+Define y U+0079  ;y
+Define z U+007A  ;z
+Define A U+0041  ;A
+Define B U+0042  ;B
+Define C U+0043  ;C
+Define D U+0044  ;D
+Define G U+0047  ;G
+Define I U+0049  ;I
+Define J U+004A  ;J
+Define K U+004B  ;K
+Define L U+004C  ;L
+Define M U+004d  ;M
+Define P U+0050  ;P
+Define R U+0052  ;R
+Define T U+0054  ;T
+Define U U+0055  ;U
+
+Define quot	U+0022
+Define hash	U+0023
+Define amper	U+0026
+Define plus	U+002B
+Define dot	U+002E
+Define slash	U+002F
+Define at	U+0040
+Define under	U+005F
+Define lbrace	U+007B
+Define bar	U+007C
+Define rbrace	U+007D
+Define tlde	U+007E
+
+Define candrabindu U+0901
+Define bindu	U+1E43 ; U+1E41
+Define visarga	U+1E25
+Define asvara	U+0061
+Define Asvara	U+0101
+Define Isvara	U+012B
+Define Usvara	U+016B
+Define rvoc	U+1E5B
+Define lvoc	U+1E37
+
+Define nga	U+1E45
+Define nya	U+00F1
+Define Ta	U+1E6D
+Define Da	U+1E0D
+Define Na	U+1E47
+Define sha	U+015B
+Define Sa	U+1E63
+
+
+
+Define avagraha	U+093D
+
+Define Amatra	U+0101
+Define Imatra	U+012B
+Define Umatra	U+016B
+Define rmatra	U+1E5B
+Define Rmatra	U+1E5D
+Define Rvoc	U+1E5B
+Define Lvoc	U+1E37
+Define lmatra	U+1E37
+
+Define zwnj	U+200C
+Define zwj	U+200D
+
+;; First pass
+pass(Unicode)
+; From TeX-text
+U+002D U+002D                   <>      U+2013  ; -- -> en dash
+U+002D U+002D U+002D    <>      U+2014  ; --- -> em dash
+U+0027                  <>      U+2019  ; ' -> right single quote
+U+0027 U+0027   <>      U+201D  ; '' -> right double quote
+U+0022                   >      U+201D  ; " -> right double quote
+U+0060                  <>      U+2018  ; ` -> left single quote
+U+0060 U+0060   <>      U+201C  ; `` -> left double quote
+
+; Vowels, all independent
+a a > Asvara
+A <> Asvara
+i i > Isvara
+I <> Isvara
+u u > Usvara
+U <> Usvara
+dot r <> rvoc
+dot r dot r <> Rvoc
+dot l <> lvoc
+dot l dot l <> Lvoc
+
+M <> bindu
+dot m > bindu
+tlde m <> candrabindu
+slash > candrabindu
+dot h <> visarga
+dot a <> avagraha
+;tlde o <> ocandra
+dot o <> U+006F U+006D U+0310
+
+; Consonants, no conjuncts
+quot n <> nga
+tlde n <> nya
+dot t <> Ta
+dot d <> Da
+dot n <> Na
+quot s <> sha
+dot s <> Sa
+
+; Symbols
+;at <> abbrev
+
+; Ligature breaking
+plus <> zwj
+
+pass(Unicode)
+UniClass [vyanjana] = (nga .. Sa)
+UniClass [svara] = (Asvara .. lvoc)
+UniClass [matra] = (Amatra .. lmatra)
+[vyanjana] [svara] > [vyanjana] [matra]
