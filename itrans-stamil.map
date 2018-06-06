@@ -1,7 +1,7 @@
-; TECkit mapping for transliterating Sanskrit in ITRANS input scheme to 
-; Unicode Tamil (0B80-0BFF) based on itrans-tamil.map
+; TECkit mapping for transliterating ITRANS input scheme to 
+; Unicode Tamil (0B80-0BFF) - based on itrans-tamil.map
 ; 
-; Updated 2018-05-23 by ShreeDevi Kumar based on suggestions by Himanshu Pota
+; Updated 2018-05-23 by ShreeDevi Kumar based on suggestions by N V Vathsan
 
 LHSName "itrans-stamil"
 RHSName "Unicode"
