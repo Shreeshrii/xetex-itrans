@@ -1,12 +1,11 @@
-; TECkit mapping for transliterating ITRANS input scheme to 
-; Unicode Tamil (0B80-0BFF) 
-; Based on itrans-tamil.map and itrans-sdvn.map
-; Updated 2018-06-07 by ShreeDevi Kumar based on suggestions by Sri N V Vathsan
+; TECkit mapping for transliterating Tamil in ITRANS input scheme to 
+; Unicode Tamil (0B80-0BFF) based on itrans-tamil.map
+; Updated 2018-05-23 by ShreeDevi Kumar based on suggestions by Sri N V Vathsan
 
 LHSName "itrans-stamil"
 RHSName "Unicode"
-LHSDescription "Itrans input method for Unicode Tamil Script"
-Version "1.2"
+LHSDescription "Itrans input method for Unicode Tamil"
+Version "1.1"
 
 Define dot U+002E
 
@@ -239,11 +238,10 @@ d > da
 d dot h > da virama
 d h > dha
 d h dot h > dha virama
-n > na
-n dot h > na virama
 cret n > nnaa
 cret n dot h > nnaa virama
-
+n > na
+n dot h > na virama
 
 
 p > pa
@@ -291,11 +289,9 @@ k S h dot h > ka virama Sha virama
 G Y > ja virama Ja
 d n y > ja virama Ja
 A U M > om
-O M > om
 s h r >  sha virama ra
 
 s r i > U+0BB6 U+0BCD U+0BB0 U+0BC0
-S R I > U+0BB6 U+0BCD U+0BB0 U+0BC0
 
 ;q > hka
 ;x > hkha
@@ -319,7 +315,22 @@ U+002C > virama
 U+007C > danda
 U+007C U+007C > ddanda
 
+O M > om
 
+;U+0030	> U+0BE6	; Numerals
+;U+0031	> U+0BE7
+;U+0032	> U+0BE8
+;U+0033	> U+0BE9
+;U+0034	> U+0BEA
+;U+0035	> U+0BEB
+;U+0036	> U+0BEC
+;U+0037	> U+0BED
+;U+0038	> U+0BEE
+;U+0039	> U+0BEF
+
+;U+0031 U+0030 > U+0BF0
+;U+0031 U+0030 U+0030 > U+0BF1
+;U+0031 U+0030 U+0030 U+0030 > U+0BF2
 
 pass(Unicode)
 
@@ -338,7 +349,8 @@ pass(Unicode)
 UniClass [vyanjana] = (ka .. ha)
 [vyanjana]=v1 [vyanjana]=v2 > @v1 virama @v2
 
-;; Fourth pass:  adding viramas to the end of the words 
+;; Fourth pass: making remaining conjuncts (for groups of two or more consonants)
+;; and adding viramas to the end of the words in Sanskrit
 pass (Unicode)
 
 ;; Classes
@@ -346,8 +358,10 @@ UniClass [vyanjana] = (ka .. ha)
 UniClass [spacepunct] = (U+0009 .. U+0040 U+005B .. U+0060 U+007B .. U+007D danda ddanda \
     U+2013 U+2014 U+2018 U+2019 U+201C U+201D)
 
+[vyanjana]=v1 [vyanjana]=v2 <> @v1 virama @v2
 [vyanjana] / _ [spacepunct] <> [vyanjana] virama / _ [spacepunct]
 [vyanjana] / _ # <> [vyanjana] virama / _ #
+
 
 pass(Unicode)
 
