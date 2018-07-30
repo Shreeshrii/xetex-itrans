@@ -1,10 +1,12 @@
-; TECkit mapping for transliterating Tamil in ITRANS input scheme to 
-; Unicode Tamil (0B80-0BFF) based on itrans-tamil.map
-; Updated 2018-05-23 by ShreeDevi Kumar based on suggestions by Sri N V Vathsan
+; $Id: itrans-stamil.map,v 1.1 2018-07-30 $
+; TECkit mapping for transliterating text in ITRANS input scheme to 
+; Unicode Tamil (0B80-0BFF)
+; based on itrans-tamil.map
+; Updated in June 2018 by ShreeDevi Kumar based on suggestions by Sri N V Vathsan
 
 LHSName "itrans-stamil"
 RHSName "Unicode"
-LHSDescription "Itrans input method for Unicode Tamil"
+LHSDescription "Itrans input to Unicode Tamil Script for Sanskrit"
 Version "1.1"
 
 Define dot U+002E
@@ -290,7 +292,7 @@ G Y > ja virama Ja
 d n y > ja virama Ja
 A U M > om
 s h r >  sha virama ra
-
+S R I > U+0BB8 U+0BCD U+0BB0 U+0BC0
 s r i > U+0BB6 U+0BCD U+0BB0 U+0BC0
 
 ;q > hka

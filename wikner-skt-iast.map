@@ -1,11 +1,11 @@
-; $Id: wikner-skt-iast.map,v 1.0 2018-06-01 $
+; $Id: wikner-skt-iast.map,v 1.1 2018-07-30 $
 ; TECkit mapping for conversion of Wikner-Skt transliteration
 ; into UTF-8 IAST transliteration directly by XeTeX. 
-; Viramas are added after the final consonant.
+; 
 LHSName  "Wikner-Skt-iast"
 RHSName  "UNICODE"
 LHSDescription "Wikner-Skt to IAST for Sanskrit"
-Version  "1"
+Version  "1.1"
 
 Define a U+0061  ;a
 Define b U+0062  ;b
@@ -45,8 +45,10 @@ Define L U+004C  ;L
 Define M U+004d  ;M
 Define P U+0050  ;P
 Define R U+0052  ;R
+Define S U+0053  ;S
 Define T U+0054  ;T
 Define U U+0055  ;U
+Define V U+0055  ;V
 
 Define quot	U+0022
 Define hash	U+0023
@@ -64,22 +66,35 @@ Define tlde	U+007E
 Define candrabindu U+0901
 Define bindu	U+1E43 ; U+1E41
 Define visarga	U+1E25
+
+Define AAsvara	U+0100
+Define IIsvara	U+012A
+Define UUsvara	U+016A
+Define RRvoc	U+1E5A
+Define LLvoc	U+1E36
+
 Define asvara	U+0061
+
 Define Asvara	U+0101
 Define Isvara	U+012B
 Define Usvara	U+016B
 Define rvoc	U+1E5B
 Define lvoc	U+1E37
 
+Define Rvoc	U+1E5D
+Define Lvoc	U+1E39
+
 Define nga	U+1E45
 Define nya	U+00F1
+Define TTa	U+1E6C
 Define Ta	U+1E6D
+Define DDa	U+1E0C
 Define Da	U+1E0D
 Define Na	U+1E47
+Define Sha	U+015A
 Define sha	U+015B
+Define SSa	U+1E62
 Define Sa	U+1E63
-
-
 
 Define avagraha	U+093D
 
@@ -87,9 +102,6 @@ Define Amatra	U+0101
 Define Imatra	U+012B
 Define Umatra	U+016B
 Define rmatra	U+1E5B
-Define Rmatra	U+1E5D
-Define Rvoc	U+1E5B
-Define Lvoc	U+1E37
 Define lmatra	U+1E37
 
 Define zwnj	U+200C
@@ -108,17 +120,18 @@ U+0060 U+0060   <>      U+201C  ; `` -> left double quote
 
 ; Vowels, all independent
 a a > Asvara
-A <> Asvara
+A A <> AAsvara
 i i > Isvara
-I <> Isvara
+I I <> IIsvara
 u u > Usvara
-U <> Usvara
+U U <> UUsvara
 dot r <> rvoc
+dot R <> RRvoc
 dot r dot r <> Rvoc
 dot l <> lvoc
+dot L <> LLvoc
 dot l dot l <> Lvoc
 
-M <> bindu
 dot m > bindu
 tlde m <> candrabindu
 slash > candrabindu
@@ -131,10 +144,14 @@ dot o <> U+006F U+006D U+0310
 quot n <> nga
 tlde n <> nya
 dot t <> Ta
+dot T <> TTa
 dot d <> Da
+dot D <> DDa
 dot n <> Na
 quot s <> sha
 dot s <> Sa
+dot S <> SSa
+quot S <> Sha
 
 ; Symbols
 ;at <> abbrev
