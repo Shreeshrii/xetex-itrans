@@ -14,6 +14,11 @@ for texlive 2018
 
 /usr/share/texlive/texmf-dist/fonts/misc/xetex/fontmapping/xetex-itrans/
 
- and run mktexlsr
+ and run `mktexlsr`
 
 
+#### Notes
+
+ sudo apt-get install texlive-lang-indic
+ 
+ for loading of hyphenation 
