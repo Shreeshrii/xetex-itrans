@@ -72,7 +72,7 @@ Define x U+0078
 Define zwj U+200D
 Define zwn U+200C
 
-Define anunasika U+0901
+Define anunasika U+0C81
 Define anusvara	U+0C82
 Define visarga	U+0C83
 
@@ -368,7 +368,7 @@ UniClass [svara] = (Asvara isvara Isvara usvara Usvara rvoc Rvoc lvoc esvara Esv
 UniClass [matra] = (Amatra imatra Imatra umatra Umatra rmatra Rmatra lmatra ematra Ematra aimatra omatra Omatra aumatra)
 UniClass [naletter] = (na)
 Uniclass [galetter] = (ga)
-UniClass [anusvaraletter] = (zero)
+UniClass [anusvaraletter] = (anusvara)
 UniClass [avaletter] = (avagraha)
 UniClass [maletter] = (ma)
 UniClass [Naletter] = (Na)
@@ -379,12 +379,10 @@ UniClass [vletter] = (virama)
 UniClass [osvaraletter] = (Osvara)
 
 [naletter] [vyanjana] > [anusvaraletter] [vyanjana]
-[galetter] [vyanjana] > [anusvaraletter] [vyanjana]
 [maletter] [mvyanjana] > [anusvaraletter] [mvyanjana]
 [maletter] [maletter] [osvaraletter] > [anusvaraletter] [maletter] [Oletter]
 [Galetter] [vyanjana] > [anusvaraletter] [vyanjana]
 [jaletter] [vyanjana] > [anusvaraletter] [vyanjana]
-[Naletter] [vyanjana] > [anusvaraletter] [vyanjana]
 [anusvaraletter] [vyanjana] [svara] > [anusvaraletter] [vyanjana][matra]
 
 pass(Unicode)
