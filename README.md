@@ -22,3 +22,13 @@ for texlive 2018
  sudo apt-get install texlive-lang-indic
  
  for loading of hyphenation 
+
+ #### TECkit
+
+ TECkit is needed to compile the ASCII maps to the .tec files.
+
+ It is available from https://software.sil.org/teckit/
+
+ teckit_compile itrans-dvn.map -o itrans-dvn.tec
+
+ 
